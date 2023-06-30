@@ -1,0 +1,3 @@
+// ACTIONS TYPE
+
+export const ATIVAR_POKEDEX = 'ATIVAR_POKEDEX';

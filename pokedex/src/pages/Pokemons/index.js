@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyledContainer, StyledPokemonContainer, StyledImage, StyledName, StyledHeight, StyledWeight } from '../../pages/Pokemons/style';
+import { StyledMain, StyledSection, StyledContainer, StyledPokemonContainer, StyledImage, StyledName, StyledHeight, StyledWeight } from '../../pages/Pokemons/style';
 import PokemonContainer from '../../assets/images/pokedex-container2.png'
 
 
@@ -27,10 +27,10 @@ export default function ListaPokemons() {
     }, []);
 
     return (
-        <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", marginLeft: "5%" }}>
+        <StyledMain>
             {pokemons.map((pokemon, index) => {
                 return (
-                    <div key={index} style={{ position: "relative", display: "flex", flexDirection: "row", gap: 50 }}>
+                    <StyledSection key={index}>
                         <StyledContainer src={PokemonContainer} />
                         <StyledPokemonContainer>
                             <StyledImage src={pokemon.sprites.front_default} />
@@ -38,9 +38,9 @@ export default function ListaPokemons() {
                             <StyledHeight>{pokemon.height}</StyledHeight>
                             <StyledWeight>{pokemon.weight}</StyledWeight>
                         </StyledPokemonContainer>
-                    </div>
+                    </StyledSection>
                 )
             })}
-        </div>
+        </StyledMain>
     )
 }
