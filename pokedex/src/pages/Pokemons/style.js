@@ -6,7 +6,8 @@ const StyledMain = styled.main`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: 7%;
+  padding: 5%;
+  margin-top: 0.5%;
 `;
 
 const StyledSection = styled.section `

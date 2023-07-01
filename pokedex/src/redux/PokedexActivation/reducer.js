@@ -1,6 +1,6 @@
 import { ATIVAR_POKEDEX } from "../actions"
 const initialState = {
-    ativada: false
+    ativado: true
 } 
 
 export const ativacaoPokedex = (state = initialState, action) => {
