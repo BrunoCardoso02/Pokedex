@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import pokedexContainer from '../../assets/images/pokedex-container2.png'
+import pokedexContainer2 from '../../assets/images/pokedex-container2.png'
+import pokedexContainer1 from '../../assets/images/pokedex-container1.jpg'
 
 const StyledMain = styled.main`
   display: flex;
@@ -17,13 +18,15 @@ const StyledSection = styled.section `
   gap: 50px;
 `;
 
-const  StyledContainer = styled.div`
-  background-image: url(${pokedexContainer});
+const StyledContainer = styled.div`
+  background-image: url(${props => props.isInactive ? pokedexContainer1 : pokedexContainer2});
   background-size: 100%;
   display: flex;
-  width: 500px;
-  height: 380px;
+  width: ${props => props.isInactive ? "300px" : "500px"};
+  height: ${props => props.isInactive ? "450px" : "380px"};
   background-size: cover;
+  margin-top: ${props => props.isInactive ? "20px" : "auto"};;
+  border-radius: 10px;
 `;
 const StyledPokemonContainer = styled.div`
   position: relative;
@@ -34,15 +37,18 @@ const StyledPokemonContainer = styled.div`
 `;
 const StyledImage = styled.img`
   position: absolute;
-  top: 36%;
-  transform: translate(-440%, 0);
+  top: (${props => props.isInactive ? "30%" : "36%"});
+  transform: translate(${props => props.isInactive ? "-200%, 0" : "-440%, 0"});
+  opacity: ${props => props.isInactive ? '0' : 'auto'};
 `;
+
 const StyledName = styled.h2`
   position: absolute;
   top: 29.4%;
-  transform: translate(-170px, 0);
+  transform: translate(-170px, 0); 
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
+  opacity: ${props => props.isInactive ? '0' : 'auto'};
 `;
 const StyledHeight = styled.h2`
   position: absolute;
@@ -50,6 +56,7 @@ const StyledHeight = styled.h2`
   transform: translate(-236px, 0);
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
+  opacity: ${props => props.isInactive ? '0' : 'auto'};
 `;
 const StyledWeight = styled.h2`
   position: absolute;
@@ -57,6 +64,7 @@ const StyledWeight = styled.h2`
   transform: translate(-115px, 0);
   color: #fff;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-`
+  opacity: ${props => props.isInactive ? '0' : 'auto'};
+`;
 
 export { StyledMain, StyledSection, StyledContainer, StyledPokemonContainer, StyledImage, StyledName, StyledHeight, StyledWeight };

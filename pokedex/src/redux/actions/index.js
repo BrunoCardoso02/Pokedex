@@ -2,8 +2,9 @@
 
 export const ATIVAR_POKEDEX = 'ATIVAR_POKEDEX';
 
+
 // ACTIONS
 
-export const ativacaoPokedex = () => ({
+export const ativarPokedex = () => ({
     type: ATIVAR_POKEDEX
 })
